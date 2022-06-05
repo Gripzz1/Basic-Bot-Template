@@ -1,12 +1,11 @@
 const fs = require("fs");
 const { readdirSync } = fs;
 const client = require("../index");
-const chalk = require("chalk");
 
 console.log("-".repeat(30));
 
 // COMMANDS
-console.log(chalk.green.bold("COMMANDS 🟢"));
+console.log("COMMANDS 🟢");
 readdirSync("./commands").forEach(async (dir) => {
   const commands = readdirSync(`./commands/${dir}/`).filter((file) =>
     file.endsWith(".js")
@@ -34,7 +33,7 @@ readdirSync("./commands").forEach(async (dir) => {
 console.log("-".repeat(30));
 
 //EVENTS
-console.log(chalk.yellow.bold("EVENTS 🟢"));
+console.log("EVENTS 🟢");
 readdirSync("./events").forEach(async (event) => {
   const eventName = event.replace(".js", "");
   require(`../events/${event}`);
